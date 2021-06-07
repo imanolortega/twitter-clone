@@ -1,0 +1,22 @@
+.widgets__widget {
+    padding: 20px;
+    border-bottom: 1px solid var(--twitter-background);
+    cursor: pointer;
+}
+
+.widgets__widget:hover {
+    background-color: var(--twitter-background);
+    transition: color 100ms ease-out;
+}
+
+.widgets__widgetLabel {
+    font-size: 16px;
+    color: var(--twitter-gray)
+}
+
+.widgets__widgetTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--twitter-black);
+    padding: 4px 0px;
+}

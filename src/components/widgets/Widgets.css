@@ -1,0 +1,58 @@
+.widgets{
+    flex: 0.3;
+}
+
+.widgets__input {
+    display: flex;
+    align-items: center;
+    background-color: var(--twitter-background);
+    padding: 10px 30px;
+    border-radius: 9999px;
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+.widgets__input > input {
+    border: none;
+    background-color: var(--twitter-background);
+    font-size: 18px;
+    padding: 10px;
+}
+
+.widgets__input > input:focus {
+    outline: none;
+}
+
+.widgets__searchIcon {
+    color: var(--twitter-gray);
+}
+
+.widgets__widgetContainer {
+    margin-top: 20px;
+    margin-left: 30px;
+    background-color: var(--twitter-background-widget);
+    border-radius: 20px;
+}
+
+.widgets__widgetContainer > h2 {
+    color: var(--twitter-black);
+}
+
+.widgets__widgetsHeader {
+    padding: 20px;
+    border-bottom: 1px solid var(--twitter-background);
+}
+
+.widgets__widgetsFooter {
+    padding: 20px;
+    color: var(--twitter-color);
+    font-size: 18px;
+    cursor:pointer;
+}
+
+.widgets__widgetsFooter:hover {  
+    background-color: var(--twitter-background);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: color 100ms ease-out;
+}
