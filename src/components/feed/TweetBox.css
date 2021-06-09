@@ -32,17 +32,16 @@
     justify-content: space-between;
 }
 
-.tweetBox__icon {    
+.tweetBox__inputImage {    
     border: none;
     color: var(--twitter-color);
-    font-size: 30px !important;
-    font-weight: 900;
-    min-height: 48px;
-    cursor: pointer;
-    padding-left: 20px;
-    padding-right: 20px;
+    font-size: 14px !important;
+    min-width: 400px;
     margin-top: 20px;
-    border-radius: 50%;
+}
+
+.tweetBox__inputImage:focus {    
+    outline: none;
 }
 
 .tweetBox__button {    
