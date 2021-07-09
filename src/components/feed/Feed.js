@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./Feed.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
-import db from "./../../firebase";
+import { db } from "./../../firebase";
 import FlipMove from "react-flip-move";
 
-const Feed = () => {
+const Feed = ({ user }) => {
   const [posts, setPosts] = useState([]);
-
+  console.log(posts);
   useEffect(() => {
     db.collection("posts")
       .orderBy("timestamp", "desc")
@@ -23,7 +23,7 @@ const Feed = () => {
       <div className="feed__header">
         <h1>Inicio</h1>
       </div>
-      <TweetBox />
+      <TweetBox user={user} />
       <FlipMove>
         {posts &&
           posts.map((post) => {
@@ -36,6 +36,7 @@ const Feed = () => {
                 text={post.text}
                 image={post.image}
                 avatar={post.avatar}
+                time={post.timestamp}
               />
             );
           })}
