@@ -5,9 +5,15 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Feed from "./components/feed/Feed";
 import Widgets from "./components/widgets/Widgets";
 import Login from "./components/login/Login";
+import { auth } from "./firebase";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+  const signOut = () => {
+    auth.signOut().then(() => {
+      setUser(null);
+    });
+  };
 
   return (
     <div>
@@ -15,7 +21,7 @@ function App() {
         <Login setUser={setUser} />
       ) : (
         <div className="app">
-          <Sidebar />
+          <Sidebar signOut={signOut} />
           <Feed user={user} />
           <Widgets />
         </div>

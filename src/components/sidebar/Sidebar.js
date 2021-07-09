@@ -11,8 +11,9 @@ import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
-const Sidebar = () => {
+const Sidebar = ({ signOut }) => {
   return (
     <div className="sidebar">
       <SidebarOption icon={<TwitterIcon className="sidebar__twitterIcon" />} />
@@ -24,8 +25,13 @@ const Sidebar = () => {
       <SidebarOption icon={<ListAltIcon />} text="Listas" />
       <SidebarOption icon={<PermIdentityIcon />} text="Perfil" />
       <SidebarOption icon={<MoreHorizIcon />} text="Más opciones" />
-
-      <button className="sidebar__tweet">Twittear</button>
+      <button
+        icon={<ExitToAppIcon />}
+        text="Cerrar Sesión"
+        onClick={signOut}
+        className="sidebar__signOut">
+        Cerrar Sesión
+      </button>
     </div>
   );
 };

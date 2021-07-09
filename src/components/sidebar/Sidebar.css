@@ -23,3 +23,18 @@
     margin-top: 10px;
     border-radius: 9999px;
 }
+
+.sidebar__signOut{
+    border: none;
+    color: rgb(224, 36, 94);
+    font-size: 18px;
+    font-weight: 900;
+    min-height: 48px;
+    cursor: pointer;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-top: 10px;
+    border-radius: 9999px;
+}
+
+
