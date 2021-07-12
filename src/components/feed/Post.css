@@ -17,10 +17,25 @@
 .post__headerText{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.post__headerTextLeft{
+    display: flex;
+    align-items: center;
+}
+
+.post__headerTextRight{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .post__headerDescription {
     margin-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 .post__body {
@@ -44,8 +59,13 @@
     color: var(--twitter-gray);
 }
 
+.post__imageUpload{
+    max-height: 25rem;
+    object-fit: cover;
+}
+
 .post__footer {
-    max-width: 625px;
+    
     display: flex;
     justify-content: space-between;
     margin-top: 10px;

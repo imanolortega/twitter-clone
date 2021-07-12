@@ -32,6 +32,29 @@
     justify-content: space-between;
 }
 
+.tweetBox__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+
+.tweetBox__imageGroup{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tweetBox__imageToPost{
+    width: 7rem;
+}
+
+.tweetBox__imageToPostIcon{
+    color: red;
+    cursor: pointer;
+}
+
 .tweetBox__inputImage {    
     border: none;
     color: var(--twitter-color);
@@ -47,6 +70,7 @@
 .tweetBox__button {    
     background-color: var(--twitter-color);
     border: none;
+    height: 2.5rem;
     color: white;
     font-size: 16px;
     font-weight: 900;
@@ -54,6 +78,6 @@
     cursor: pointer;
     padding-left: 20px;
     padding-right: 20px;
-    margin-top: 20px;
+    
     border-radius: 9999px;
 }

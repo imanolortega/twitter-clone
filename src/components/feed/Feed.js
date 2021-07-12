@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useCollection } from "react-firebase-hooks/firestore";
+
 import "./Feed.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
@@ -6,17 +8,9 @@ import { db } from "./../../firebase";
 import FlipMove from "react-flip-move";
 
 const Feed = ({ user }) => {
-  const [posts, setPosts] = useState([]);
-  console.log(posts);
-  useEffect(() => {
-    db.collection("posts")
-      .orderBy("timestamp", "desc")
-      .onSnapshot((snapshot) => {
-        setPosts(snapshot.docs.map((doc) => doc.data()));
-      });
-  }, []);
-
-  //console.log(posts);
+  const [posts] = useCollection(
+    db.collection("posts").orderBy("timestamp", "desc")
+  );
 
   return (
     <div className="feed">
@@ -25,21 +19,20 @@ const Feed = ({ user }) => {
       </div>
       <TweetBox user={user} />
       <FlipMove>
-        {posts &&
-          posts.map((post) => {
-            return (
-              <Post
-                key={post.text}
-                displayName={post.displayName}
-                username={post.username}
-                verified={post.verified}
-                text={post.text}
-                image={post.image}
-                avatar={post.avatar}
-                time={post.timestamp}
-              />
-            );
-          })}
+        {posts?.docs.map((post) => (
+          <Post
+            id={post.id}
+            user={user}
+            key={post.id}
+            displayName={post.data().displayName}
+            username={post.data().username}
+            verified={post.data().verified}
+            text={post.data().text}
+            image={post.data().postImg}
+            avatar={post.data().avatar}
+            time={post.data().timestamp}
+          />
+        ))}
       </FlipMove>
     </div>
   );
