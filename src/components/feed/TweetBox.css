@@ -46,6 +46,11 @@
     justify-content: space-between;
 }
 
+.tweetBox__imageToPostContainer {
+    display: flex;
+    align-items: center;
+}
+
 .tweetBox__imageToPost{
     width: 7rem;
 }

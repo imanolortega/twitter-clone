@@ -4,6 +4,10 @@
     align-items: center;
     cursor: pointer;
     border-radius: 9999px;
+    width: max-content;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
 }
 
 .sidebarOption:hover {

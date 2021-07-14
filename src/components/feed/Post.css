@@ -36,6 +36,7 @@
 .post__headerDescription {
     margin-bottom: 10px;
     padding-bottom: 15px;
+    font-size: 1.1rem;
 }
 
 .post__body {
@@ -49,6 +50,11 @@
     width: 100% ; 
 }
 
+.post__badgeContainer{
+    display: flex;
+    align-items: center;
+}
+
 .post__badge {
     font-size: 16px !important;
     color: var(--twitter-color);
@@ -57,6 +63,12 @@
 
 .post__userName{
     color: var(--twitter-gray);
+    font-size: 1rem;
+}
+
+.post__tweetDate{
+    color: var(--twitter-gray);
+    font-size: 0.9rem;
 }
 
 .post__imageUpload{

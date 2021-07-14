@@ -11,7 +11,10 @@ import PublishIcon from "@material-ui/icons/Publish";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
 const Post = forwardRef(
-  ({ displayName, username, verified, text, image, avatar, id, user }, ref) => {
+  (
+    { displayName, username, verified, text, image, avatar, id, user, time },
+    ref
+  ) => {
     return (
       <div className="post" ref={ref}>
         <div className="post__avatar">
@@ -22,10 +25,15 @@ const Post = forwardRef(
             <div className="post__headerText">
               <div className="post__headerTextLeft">
                 <h3>{displayName}</h3>{" "}
-                <span>
+                <span className="post__badgeContainer">
                   {verified && <VerifiedUserIcon className="post__badge" />}
                 </span>
-                <span className="post__userName">{username}</span>
+                <span className="post__userName">{username + " · "}</span>
+                <span className="post__tweetDate">
+                  {" "}
+                  &nbsp;
+                  {new Date(time?.toDate()).toLocaleString()}
+                </span>
               </div>
               <div className="post__headerTextRight">
                 {user.email === username ? (

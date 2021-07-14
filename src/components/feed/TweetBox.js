@@ -98,7 +98,9 @@ const TweetBox = ({ user }) => {
           </div>
 
           {imageToPost && (
-            <div onClick={removeImage} style={{ display: "flex" }}>
+            <div
+              onClick={removeImage}
+              className="tweetBox__imageToPostContainer">
               <img
                 className="tweetBox__imageToPost"
                 alt="img-to-post"
@@ -106,7 +108,6 @@ const TweetBox = ({ user }) => {
               />
               <HighlightOffIcon
                 className="tweetBox__imageToPostIcon"
-                style={{ color: "red" }}
                 onClick={removeImage}
               />
             </div>

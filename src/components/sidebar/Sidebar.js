@@ -25,13 +25,11 @@ const Sidebar = ({ signOut }) => {
       <SidebarOption icon={<ListAltIcon />} text="Listas" />
       <SidebarOption icon={<PermIdentityIcon />} text="Perfil" />
       <SidebarOption icon={<MoreHorizIcon />} text="Más opciones" />
-      <button
+      <SidebarOption
+        signOut={signOut}
         icon={<ExitToAppIcon />}
         text="Cerrar Sesión"
-        onClick={signOut}
-        className="sidebar__signOut">
-        Cerrar Sesión
-      </button>
+      />
     </div>
   );
 };
